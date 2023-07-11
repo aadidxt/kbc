@@ -1,0 +1,94 @@
+#Kaun Banega Crorepati(KBC) game 
+
+import time             
+#for time intervals
+
+questions=[
+    
+    [
+        "1. Besides Sachin Tendulkar, who is the only other Indian cricketer to have scored over 13,000 runs in test cricket?",
+       "a.virat kohli","b.sunil gawaskar","c.WS laxman","d.rahul dravid",4
+       
+       ],
+
+       [
+           "2. Ranthambore, Sariska and Keoladeo Ghana are all names of what?",
+       "A. National Parks","B. Goosebumps","C. Mountains","D. Rivers",1
+       ],
+
+       [
+           "3. In 2020, Louise Gluck won the Nobel Prize in which category?",
+       "A. Music","B. Sports","C. Literature","D. Dance",3
+       ],
+       [
+        "1. Besides Sachin Tendulkar, who is the only other Indian cricketer to have scored over 13,000 runs in test cricket?",
+       "a.virat kohli","b.sunil gawaskar","c.WS laxman","d.rahul dravid",4
+       
+       ],
+
+       [
+           "2. Ranthambore, Sariska and Keoladeo Ghana are all names of what?",
+       "A. National Parks","B. Goosebumps","C. Mountains","D. Rivers",1
+       ],
+
+       [
+           "3. In 2020, Louise Gluck won the Nobel Prize in which category?",
+       "A. Music","B. Sports","C. Literature","D. Dance",3
+       ],
+
+]
+ #list of questions  
+
+print("Welcome to KBC")
+time.sleep(1)
+start=int(input("press 1 to start else press 2 to quit\n"))
+
+if(start==1):
+    print("here is your first queestion")
+    time.sleep(1)
+    level=[1000,2000,5000,10000,50000,100000] 
+    #for the contestant's knowledge that on which level he/she is at?
+    money=0   
+    for i in range(0,len(questions)):            
+        #using for loop for printing questions 
+        ques=questions[i]                        
+        #storing the question in ordered form
+        print(f"Question for RS{level[i]}")
+        time.sleep(1)
+        print(ques[0])
+        print(ques[1])                     
+        print(ques[2])
+        print(ques[3])
+        print(ques[4])
+        #printing questions with their options
+
+        reply=int(input("enter your answer or press 0 to quit\n"))
+
+        if(reply==0):
+            break
+        elif(reply==ques[-1]):
+            #correct answer of the question is at the last index number
+            time.sleep(0.5)
+            print("right answert")
+            
+            print(f"you have won RS{level[i]}")
+            
+            if(i==2):
+                money=2000
+                #for storing money level wise
+            elif(i==4):
+                money=10000
+            elif(i==6):
+                money=100000
+                
+        else:
+            print("wrong answer")
+            print(f"your take home money is RS{money}")
+            print("Thanks for playing our game\n hope you'll come back later")
+            break
+                
+else:
+    print("thanks for visiting")               
+         
+
+    
